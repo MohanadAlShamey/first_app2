@@ -5,90 +5,68 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("تطبيق"),
+        title: const Text("تطبيق"),
         centerTitle: true,
+        backgroundColor: Colors.yellow.withOpacity(0.5),
+        elevation: 7,
+        // leading: Text('TExt'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-              )
-            ],
+      drawer: Drawer(
+        elevation: 18,
+        backgroundColor: Colors.red,
+        width: 600,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Container(
+              child: const Text('Home'),
+            ),
+            Container(
+              child: const Text('About'),
+            )
+          ],
+        ),
+      ),
+      backgroundColor: Colors.green,
+      body: Container(
+        color: Colors.red,
+        child: Center(
+          //child: Icon(Icons.person,size: 100,color:const  Colors.amber,),
+          child: Text(
+            'مرحبا ابو الحسن', // النص المراد إظهاره
+            style: TextStyle(
+              backgroundColor: Colors.black,
+              // خلفية الخط
+              color: Colors.white,
+              // لون الخط
+              fontSize: 60,
+              // حجم الخط
+              fontStyle: FontStyle.italic,
+              // نوع الخط
+              fontWeight: FontWeight.w300,
+              // وزن الخط
+              decoration: TextDecoration.overline,// ديكور الخط يتوسطه خط أو تحته خط),
+            ),
+            textDirection: TextDirection.rtl, // إتجاه النص
+            maxLines: 1,// عدد الأسطر المتاحة
+
           ),
-          Container(
-            width: 300,
-            height: 100,
-            color: Colors.red,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-              )
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-
-                    Container(
-                      width: 100,
-                      height: 100,
-                      color: Colors.red,
-                    ),
-
-                    Container(
-                      width: 100,
-                      height: 100,
-                      color: Colors.red,
-                    ),
-
-                    Container(
-                      width: 100,
-                      height: 100,
-                      color: Colors.red,
-                    ),
-                  ],
-                ),
-              )
-            ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.amberAccent,
+        elevation: 10,
+        currentIndex: 0,
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+              activeIcon: Icon(Icons.access_time),
+              backgroundColor: Colors.red),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+            activeIcon: Icon(Icons.access_time),
           ),
         ],
       ),
